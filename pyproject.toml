@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "captionise"
+version = "0.1.0"
+description = "A Bittensor Subnet for Decentralized Captioning"
+authors = ["Sai <sai@synapselabsdev.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/YourOrg/captionise"
+repository = "https://github.com/YourOrg/captionise"
+keywords = ["bittensor", "caption", "speech-to-text", "AI"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+torch = "^2.3.0"
+bittensor = "9.0.3"
+openai-whisper = "20240930"
+pydub = "0.25.1"
+pydantic = "2.10.6"
+pandas = "*"
+jiwer = "3.1.0"
+numpy = "2.2.3"
+loguru = "0.7.2"
+python-dotenv = "1.0.1"
+fastapi = "^0.110.0"
+uvicorn = "^0.27.1"
+structlog = "^24.1.0"
+slowapi = "^0.1.9"
+prometheus-fastapi-instrumentator = "^6.1.0"
+tenacity = "9.0.0"
+requests = "^2.32.3"
+
+
+#[tool.poetry.scripts]
+# These let you run the miner/validator scripts via `poetry run start-miner` or `poetry run start-validator`.
+#start-miner = "captionise.scripts.start_miner:main"
+#start-validator = "captionise.scripts.start_validator:main"
+
+[build-system]
+requires = ["poetry-core>=1.4.0"]
+build-backend = "poetry.core.masonry.api"

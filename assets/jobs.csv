@@ -1,0 +1,16 @@
+job_id,text,active,created_at,updated_at
+job-1001,"Hello world, let's create an audio track!",1,2024-01-20 10:00:00,2024-01-20 10:00:00
+job-1002,"Need background commentary for sports highlights.",1,2024-01-20 10:05:00,2024-01-20 10:05:00
+job-1003,"Corporate meeting summary in audio form",1,2024-01-20 10:10:00,2024-01-20 10:10:00
+job-1004,"Greetings to my best friend Jill!",1,2024-01-20 10:15:00,2024-01-20 10:15:00
+job-1005,"Daily motivational quotes compilation",1,2024-01-20 10:20:00,2024-01-20 10:20:00
+job-1006,"Funny jokes to cheer up the day.",1,2024-01-20 10:25:00,2024-01-20 10:25:00
+job-1007,"Book summary: 'The Great Gatsby' in audio",1,2024-01-20 10:30:00,2024-01-20 10:30:00
+job-1008,"30-second ad script for a new snack brand",0,2024-01-20 10:35:00,2024-01-20 12:00:00
+job-1009,"Weather forecast narration for local radio",1,2024-01-20 10:40:00,2024-01-20 10:40:00
+job-1010,"Simple bedtime story for kids",1,2024-01-20 10:45:00,2024-01-20 10:45:00
+job-1011,"Quick audio summary of project tasks",0,2024-01-20 10:50:00,2024-01-20 11:50:00
+job-1012,"Inspirational quotes from famous leaders",1,2024-01-20 10:55:00,2024-01-20 10:55:00
+job-1013,"Tech news highlights for the week",1,2024-01-20 11:00:00,2024-01-20 11:00:00
+job-1014,"Short 'thank you' message for a friend",1,2024-01-20 11:05:00,2024-01-20 11:05:00
+job-1015,"Narrate a quick cooking recipe in a fun style",1,2024-01-20 11:10:00,2024-01-20 11:10:00
