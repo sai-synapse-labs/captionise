@@ -4,7 +4,7 @@ import os
 import uuid
 from io import BytesIO
 from pydub import AudioSegment
-from captionise.miners import captionise_miner as BaseMiner
+from captionise.miners.captionise_miner import CaptioniseMiner as BaseMiner
 from captionise.protocol import CaptionSynapse
 
 class CaptionMiner(BaseMiner):
