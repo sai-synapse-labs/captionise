@@ -7,7 +7,7 @@ import tenacity
 from dotenv import load_dotenv
 
 from captionise import __version__ as version  # if you track your version here
-from captionise import __spec_version__ as spec_version
+
 from captionise.mock import MockSubtensor, MockMetagraph
 
 from captionise.utils.config import add_args, check_config, config  # adapt if you have a global config
@@ -39,7 +39,7 @@ class BaseNeuron(ABC):
     subtensor: "bt.subtensor"
     wallet: "bt.wallet"
     metagraph: "bt.metagraph"
-    spec_version: int = spec_version
+    spec_version: int = 0.1
 
     @property
     @tenacity.retry(
