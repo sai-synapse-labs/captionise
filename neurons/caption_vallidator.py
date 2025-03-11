@@ -3,7 +3,7 @@ import random
 import jiwer
 from typing import List
 from captionise.validators import captionise_validator as BaseValidator
-from captionise.protocol import CaptionSynapse, CaptionSegment
+from captionise.protocol import CaptionSynapse
 import bittensor as bt
 
 class CaptionValidator(BaseValidator):
