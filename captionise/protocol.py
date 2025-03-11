@@ -57,6 +57,21 @@ class CaptionSynapse(bt.Synapse):
             logger.debug(f"Segments found: {self.segments}")
         return self
 
+class CaptionSegment(bt.Synapse):
+    """
+    Represents a single segment/chunk of a transcribed audio file.
+    Contains timing information and the transcribed text.
+
+    Attributes:
+        start_time: Start time of this segment in seconds
+        end_time: End time of this segment in seconds  
+        text: The transcribed text for this segment
+    """
+    start_time: float
+    end_time: float 
+    text: str
+    
+
 
 class JobSubmissionSynapse(bt.Synapse):
     """
