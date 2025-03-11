@@ -2,7 +2,7 @@ import time
 import random
 import jiwer
 from typing import List
-from base.validator import BaseValidator
+from captionise.base.validator import BaseValidator
 from captionise.protocol import CaptionSynapse, CaptionSegment
 import bittensor as bt
 
