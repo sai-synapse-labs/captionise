@@ -1,5 +1,5 @@
 import bittensor as bt
-import openai_whisper
+import whisper as ow
 import os
 import uuid
 from io import BytesIO
@@ -12,7 +12,7 @@ class CaptionMiner(BaseMiner):
         super().__init__(wallet, config)
         # Load a whisper model
         model_name = "base"  # or "medium", "large", etc.
-        self.model = openai_whisper.load_model(model_name)
+        self.model = ow.load_model(model_name)
         bt.logging.success(f"Loaded Whisper model: {model_name}")
 
     async def forward(self, synapse: bt.Synapse) -> bt.Synapse:
