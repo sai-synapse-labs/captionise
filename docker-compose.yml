@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: caption_subnet
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgres/data
+    networks:
+      - caption_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  validator:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.validator
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+    volumes:
+      - ~/.bittensor:/home/captionuser/.bittensor
+    command: [
+      "--netuid", "1",
+      "--subtensor.chain_endpoint", "ws://host.docker.internal:9944",
+      "--wallet.name", "validator",
+      "--wallet.hotkey", "default",
+      "--neuron.device", "cuda:0"
+    ]
+    networks:
+      - caption_network
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+
+  miner:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.miner
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+    volumes:
+      - ~/.bittensor:/home/captionuser/.bittensor
+    command: [
+      "--netuid", "1",
+      "--subtensor.chain_endpoint", "ws://host.docker.internal:9944",
+      "--wallet.name", "miner",
+      "--wallet.hotkey", "default",
+      "--neuron.device", "cuda:0",
+      "--neuron.whisper_model", "base"
+    ]
+    networks:
+      - caption_network
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+
+networks:
+  caption_network:
+    driver: bridge
+
+volumes:
+  postgres_data: 
